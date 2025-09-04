@@ -1,13 +1,13 @@
 {
-    "name": "@voila-dashboards/jupyterlab-gridstack",
+    "name": "@voila-dashboards/unofficial-jupyterlab-gridstack",
     "version": "0.4.0",
-    "homepage": "https://github.com/voila-dashboards/voila-gridstack",
+    "homepage": "https://github.com/voila-dashboards/unofficial-voila-gridstack",
     "repository": {
         "type": "git",
-        "url": "https://github.com/voila-dashboards/voila-gridstack"
+        "url": "https://github.com/voila-dashboards/unofficial-voila-gridstack"
     },
     "bugs": {
-        "url": "https://github.com/voila-dashboards/voila-gridstack/issues"
+        "url": "https://github.com/voila-dashboards/unofficial-voila-gridstack/issues"
     },
     "license": "BSD-3-Clause",
     "author": "Voila Development Team",
@@ -55,7 +55,7 @@
     "dependencies": {
         "@jupyter-widgets/base": "^6.0.6",
         "@jupyter-widgets/jupyterlab-manager": "^5.0.9",
-        "@jupyter/ydoc": "^1.0.2",
+        "@jupyter/ydoc": "^3.0.0",
         "@jupyterlab/application": "^4.0.0",
         "@jupyterlab/apputils": "^4.0.0",
         "@jupyterlab/cells": "^4.0.0",
@@ -112,7 +112,7 @@
     },
     "jupyterlab": {
         "extension": true,
-        "outputDir": "voila_gridstack/labextension",
+        "outputDir": "unofficial_voila_gridstack/labextension",
         "sharedPackages": {
             "@jupyter-widgets/base": {
                 "bundled": false,

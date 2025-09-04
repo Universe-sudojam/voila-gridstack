@@ -15,7 +15,7 @@ The recommended way to make a release is to use
 
 ![Draft Changelog](assets/release-draft-changelog.png)
 
-3. In the [Voila-Gridstack repo](https://github.com/voila-dashboards/voila-gridstack/pulls) you will see a new PR to update the changelog.
+3. In the [unofficial-voila-gridstack repo](https://github.com/voila-dashboards/unofficial-voila-gridstack/pulls) you will see a new PR to update the changelog.
    Make sure the PR is correct and merge it.
 
 ![Changelog PR](assets/release-changelog-pr.png)

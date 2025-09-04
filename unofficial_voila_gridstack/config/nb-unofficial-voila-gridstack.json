@@ -1,0 +1,5 @@
+{
+  "load_extensions": {
+    "unofficial-voila-gridstack/extension": true
+  }
+}

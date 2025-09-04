@@ -2,7 +2,7 @@
 
 To use the `gridstack` template, pass option `--template=gridstack` to the `voila` command line.
 
-![voila-gridstack](../_static/voila-gridstack.gif)
+![unofficial-voila-gridstack](../_static/unofficial-voila-gridstack.gif)
 
 By default the position of cells in the dashboard will be fixed. If you want them to be draggable
 and resizable, you can launch voila with the `show_handles` resource set to `True`:

@@ -4,7 +4,7 @@ jest.config.js
 
 package.json
 node_modules
-voila_gridstack
+unofficial_voila_gridstack
 **/build
 **/lib
 **/mock_packages

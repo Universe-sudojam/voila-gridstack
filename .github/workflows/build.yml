@@ -89,4 +89,4 @@ jobs:
 
     - name: Check the extensions are installed
       run: |
-        jupyter nbextension list 2>&1 | grep -ie "voila-gridstack/extension.*enabled" -
+        jupyter nbextension list 2>&1 | grep -ie "unofficial-voila-gridstack/extension.*enabled" -

@@ -1,4 +1,4 @@
-name: voila-gridstack
+name: unofficial-voila-gridstack
 channels:
 - conda-forge
 dependencies:

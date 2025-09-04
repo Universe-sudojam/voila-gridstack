@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'voila-gridstack'
+project = 'unofficial-voila-gridstack'
 copyright = '2022, Voila Development Team'
 author = 'Voila Development Team'
 release = '0.3.0'

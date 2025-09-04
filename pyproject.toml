@@ -9,7 +9,7 @@ requires = [
 build-backend = "hatchling.build"
 
 [project]
-name = "voila-gridstack"
+name = "unofficial-voila-gridstack"
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.8"
@@ -57,36 +57,35 @@ fields = ["description", "authors", "urls"]
 
 [tool.hatch.build.targets.sdist]
 artifacts = [
-    "/voila_gridstack/labextension",
-    "/voila_gridstack/nbextension",
-    "/voila_gridstack/template",
-    "/voila_gridstack/config",
+    "/unofficial_voila_gridstack/labextension",
+    "/unofficial_voila_gridstack/nbextension",
+    "/unofficial_voila_gridstack/template",
+    "/unofficial_voila_gridstack/config",
 ]
 exclude = ["/.github", "/binder", "node_modules", "assets", "docs", "examples"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["voila_gridstack"]
+packages = ["unofficial_voila_gridstack"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"voila_gridstack/config/jpserver-voila-gridstack.json" = "etc/jupyter/jupyter_server_config.d/jpserver-voila-gridstack.json"
-"voila_gridstack/config/nbserver-voila-gridstack.json" = "etc/jupyter/jupyter_notebook_config.d/nbserver-voila-gridstack.json"
-"voila_gridstack/config/nb-voila-gridstack.json" = "etc/jupyter/nbconfig/notebook.d/nb-voila-gridstack.json"
+"unofficial_voila_gridstack/config/jpserver-unofficial-voila-gridstack.json" = "etc/jupyter/jupyter_server_config.d/jpserver-unofficial-voila-gridstack.json"
+"unofficial_voila_gridstack/config/nbserver-unofficial-voila-gridstack.json" = "etc/jupyter/jupyter_notebook_config.d/nbserver-unofficial-voila-gridstack.json"
+"unofficial_voila_gridstack/config/nb-unofficial-voila-gridstack.json" = "etc/jupyter/nbconfig/notebook.d/nb-unofficial-voila-gridstack.json"
 "install.json" = "share/jupyter/labextensions/@voila-dashboards/jupyterlab-gridstack/install.json"
-"voila_gridstack/labextension" = "share/jupyter/labextensions/@voila-dashboards/jupyterlab-gridstack"
-"voila_gridstack/nbextension" = "share/jupyter/nbextensions/voila-gridstack"
-"voila_gridstack/template" = "share/jupyter/nbconvert/templates/gridstack"
+"unofficial_voila_gridstack/labextension" = "share/jupyter/labextensions/@voila-dashboards/unofficial-jupyterlab-gridstack"
+"unofficial_voila_gridstack/nbextension" = "share/jupyter/nbextensions/unofficial-voila-gridstack"
+"unofficial_voila_gridstack/template" = "share/jupyter/nbconvert/templates/gridstack"
 
 [tool.hatch.build.targets.wheel.force-include]
-"voila_gridstack/labextension" = "voila_gridstack/labextension"
+"unofficial_voila_gridstack/labextension" = "unofficial_voila_gridstack/labextension"
 
 [tool.hatch.build.hooks.jupyter-builder]
 dependencies = ["hatch-jupyter-builder>=0.6.2"]
 build-function = "hatch_jupyter_builder.npm_builder"
 ensured-targets = [
-    "voila_gridstack/labextension/static/style.js",
-    "voila_gridstack/labextension/package.json",
+    "unofficial_voila_gridstack/labextension/static/style.js",
+    "unofficial_voila_gridstack/labextension/package.json",
 ]
-skip-if-exists = ["voila_gridstack/labextension/static/style.js"]
 
 [tool.hatch.build.hooks.jupyter-builder.build-kwargs]
 npm = ["jlpm"]

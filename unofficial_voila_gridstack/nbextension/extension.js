@@ -10,10 +10,10 @@
 
 define(['jquery',
         'base/js/namespace',
-        'nbextensions/voila-gridstack/gridstack-jq',
-        'nbextensions/voila-gridstack/voila-gridstack'
+        'nbextensions/unofficial-voila-gridstack/gridstack-jq',
+        'nbextensions/unofficial-voila-gridstack/unofficial-voila-gridstack'
        ],
-       function($, Jupyter, gridstack, voila_gridstack) {
+       function($, Jupyter, gridstack, unofficial_voila_gridstack) {
 
     var GRIDSTACK_STYLES = 'https://cdn.jsdelivr.net/npm/gridstack@4.0.1/dist/gridstack.min.css';
     var grid;
@@ -26,10 +26,10 @@ define(['jquery',
         /*
          * Cancel gridstack view and go back to usual notebook view
          */
-        var close_voila_gridstack = function() {
+        var close_unofficial_voila_gridstack = function() {
 
             // disables button
-            $('#btn-voila-gridstack_notebook').prop( "disabled", true );
+            $('#btn-unofficial-voila-gridstack_notebook').prop( "disabled", true );
 
             // unsubsribe from events
             grid.off('added');
@@ -57,29 +57,29 @@ define(['jquery',
                 $('style[gs-style-id]').remove();
 
                 // Remove CSS files
-                $("head").children("#voila-gridstack-styles").remove();
+                $("head").children("#unofficial-voila-gridstack-styles").remove();
 
                 // fake window resize event to resize bqplot to notebook width
                 window.dispatchEvent(new Event('resize'));
 
                 // enables button for gristack view
-                $('#btn-voila-gridstack_gridstack').prop( "disabled", false );
+                $('#btn-unofficial-voila-gridstack_gridstack').prop( "disabled", false );
             });
         }
 
         /*
          * Open Gridstack view with handles in Jupyter environment
          */
-        var open_voila_gridstack = function() {
+        var open_unofficial_voila_gridstack = function() {
 
             // disables button
-            $('#btn-voila-gridstack_gridstack').prop( "disabled", true );
+            $('#btn-unofficial-voila-gridstack_gridstack').prop( "disabled", true );
 
             // hide notebook contents during init
             $('#site').hide();
 
-            // appends voila-gridstack styles and a loading spinner
-            $("head").append("<link id='voila-gridstack-styles' href='/nbextensions/voila-gridstack/voila-gridstack.css' type='text/css' rel='stylesheet' />").ready( function () {
+            // appends unofficial-voila-gridstack styles and a loading spinner
+            $("head").append("<link id='unofficial-voila-gridstack-styles' href='/nbextensions/unofficial-voila-gridstack/unofficial-voila-gridstack.css' type='text/css' rel='stylesheet' />").ready( function () {
                 $('#site').after(`
                     <div id="loading">
                         <div class="spinner-container">
@@ -94,9 +94,9 @@ define(['jquery',
             Jupyter.notebook.execute_all_cells();
 
             // waits for all cells executed
-            voila_gridstack.wait_for_all_cells_executed().then(function () {
+            unofficial_voila_gridstack.wait_for_all_cells_executed().then(function () {
                 // then init metadata
-                voila_gridstack.init_metadata();
+                unofficial_voila_gridstack.init_metadata();
 
                 // saves notebook with metadata, then formats HTML
                 Jupyter.notebook.save_notebook().then(function () {
@@ -176,7 +176,7 @@ define(['jquery',
                     });
 
                     // adds 'on change' listener on grid to save position and size in metadata
-                    voila_gridstack.init_on_change(grid);
+                    unofficial_voila_gridstack.init_on_change(grid);
 
                     // fake window resize event at init to display bqplot without resizing tile
                     window.dispatchEvent(new Event('resize'));
@@ -191,13 +191,13 @@ define(['jquery',
                 $('#site').show();
 
                 // enables button to go back to notebook view
-                $('#btn-voila-gridstack_notebook').prop( "disabled", false );
+                $('#btn-unofficial-voila-gridstack_notebook').prop( "disabled", false );
 
             });
         }
 
         /*
-         * Open voila-gridstack in a new window
+         * Open unofficial-voila-gridstack in a new window
          */
         var open_voila_dashboard = function() {
             // saves notebook then call URL from server_extension
@@ -211,21 +211,21 @@ define(['jquery',
         var action_notebook = {
             icon    : 'fa-code', // a font-awesome class used on buttons, etc
             help    : 'Back to notebook',
-            handler : close_voila_gridstack
+            handler : close_unofficial_voila_gridstack
         };
         var prefix = 'notebook';
-        var full_action_notebook = Jupyter.actions.register(action_notebook, 'close-voila-gridstack', prefix);
+        var full_action_notebook = Jupyter.actions.register(action_notebook, 'close-unofficial-voila-gridstack', prefix);
 
         // Registers icon which show grid-stack with handles in Jupyter environment
         var action_gridstack = {
             icon    : 'fa-th', // a font-awesome class used on buttons, etc
-            help    : 'Voila-gridstack',
-            handler : open_voila_gridstack
+            help    : 'unofficial-voila-gridstack',
+            handler : open_unofficial_voila_gridstack
         };
-        var prefix = 'voila-gridstack';
-        var full_action_gridstack = Jupyter.actions.register(action_gridstack, 'open-voila-gridstack', prefix);
+        var prefix = 'unofficial-voila-gridstack';
+        var full_action_gridstack = Jupyter.actions.register(action_gridstack, 'open-unofficial-voila-gridstack', prefix);
 
-        // Registers icon which open voila-gridstack
+        // Registers icon which open unofficial-voila-gridstack
         var action_dashboard = {
             icon    : 'fa-dashboard', // a font-awesome class used on buttons, etc
             help    : 'Voila-dashboard',
@@ -235,13 +235,13 @@ define(['jquery',
         var full_action_dashboard = Jupyter.actions.register(action_dashboard, 'open-voila-dashboard', prefix);
 
         // adds buttons in Jupyter header
-        Jupyter.toolbar.add_buttons_group([{action: full_action_notebook, id: 'btn-voila-gridstack_notebook'},
-                                           {action: full_action_gridstack, id: 'btn-voila-gridstack_gridstack'},
+        Jupyter.toolbar.add_buttons_group([{action: full_action_notebook, id: 'btn-unofficial-voila-gridstack_notebook'},
+                                           {action: full_action_gridstack, id: 'btn-unofficial-voila-gridstack_gridstack'},
                                            full_action_dashboard],
-                                           'btn-voila-gridstack');
+                                           'btn-unofficial-voila-gridstack');
 
         // disables button to notebook view, as this is the default view
-        $('#btn-voila-gridstack_notebook').prop( "disabled", true );
+        $('#btn-unofficial-voila-gridstack_notebook').prop( "disabled", true );
     }
 
     return {

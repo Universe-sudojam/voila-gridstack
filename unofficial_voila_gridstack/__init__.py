@@ -30,11 +30,11 @@ def _jupyter_nbextension_paths():
     return [dict(
         section="notebook",
         src="nbextension",
-        dest="voila-gridstack",
-        require="voila-gridstack/extension"
+        dest="unofficial-voila-gridstack",
+        require="unofficial-voila-gridstack/extension"
     )]
 
-def _jupyter_server_extension_points():
+def _jupyter_server_extension_paths():
     return [{
-        "module": "voila_gridstack"
+        "module": "unofficial_voila_gridstack"
     }]

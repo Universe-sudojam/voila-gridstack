@@ -1,6 +1,6 @@
-# voila-gridstack
+# unofficial-voila-gridstack
 
-A gridstack-based template for [![voila-gridstack](assets/voila.png)](https://github.com/voila-dashboards/voila).
+A gridstack-based template for [![unofficial-voila-gridstack](assets/voila.png)](https://github.com/voila-dashboards/voila).
 
 <table>
 <thead align="center" cellspacing="10">
@@ -18,12 +18,12 @@ A gridstack-based template for [![voila-gridstack](assets/voila.png)](https://gi
       </a>
     </td>
     <td align="center">
-      <a href="https://mybinder.org/v2/gh/voila-dashboards/voila-gridstack/stable?urlpath=voila/tree/examples/scotch_dashboard.ipynb">
+      <a href="https://mybinder.org/v2/gh/voila-dashboards/unofficial-voila-gridstack/stable?urlpath=voila/tree/examples/scotch_dashboard.ipynb">
         <img src="https://mybinder.org/badge_logo.svg" alt="Voila GridStack on Binder"/>
       </a>
     </td>
     <td align="center">
-      <a href="https://mybinder.org/v2/gh/voila-dashboards/voila-gridstack/stable?urlpath=lab/tree/examples">
+      <a href="https://mybinder.org/v2/gh/voila-dashboards/unofficial-voila-gridstack/stable?urlpath=lab/tree/examples">
         <img src="https://mybinder.org/badge_logo.svg" alt="JupyterLab on Binder"/>
       </a>
     </td>
@@ -33,16 +33,16 @@ A gridstack-based template for [![voila-gridstack](assets/voila.png)](https://gi
 
 ## Installation
 
-`voila-gridstack` can be installed with the mamba package manager
+`unofficial-voila-gridstack` can be installed with the mamba package manager
 
 ```
-mamba install -c conda-forge voila-gridstack
+mamba install -c conda-forge unofficial-voila-gridstack
 ```
 
 or from PyPI
 
 ```
-pip install voila-gridstack
+pip install unofficial-voila-gridstack
 ```
 
 ## Format
@@ -65,7 +65,7 @@ the specs. However, there are a few differences compared to the original implmen
 
 To use the `gridstack` template, pass option `--template=gridstack` to the `voila` command line.
 
-![voila-gridstack](assets/voila-gridstack.gif)
+![unofficial-voila-gridstack](assets/unofficial-voila-gridstack.gif)
 
 By default the position of cells in the dashboard will be fixed. If you want them to be draggable
 and resizable, you can launch voila with the `show_handles` resource set to `True`:
@@ -88,10 +88,10 @@ To install the template from source:
 
 ```bash
 # create a new `conda` environment
-conda create -n voila-gridstack -c conda-forge notebook python
+conda create -n unofficial-voila-gridstack -c conda-forge notebook python
 
 # activate the environment
-conda activate voila-gridstack
+conda activate unofficial-voila-gridstack
 
 # install the package in development mode
 python -m pip install -e .
@@ -102,21 +102,21 @@ voila --template=gridstack
 
 ### Classic Notebook Extension
 
-![voila-gridstack](assets/classic-extension.gif)
+![unofficial-voila-gridstack](assets/classic-extension.gif)
 
-`voila-gridstack` provides an extension for the classic notebook to edit the gridstack layout from the notebook interface.
+`unofficial-voila-gridstack` provides an extension for the classic notebook to edit the gridstack layout from the notebook interface.
 
 To install this extension in development mode:
 
 ```bash
 # activate the environment
-conda activate voila-gridstack
+conda activate unofficial-voila-gridstack
 
 # link the local files
-jupyter nbextension install --sys-prefix --symlink --overwrite --py voila_gridstack
+jupyter nbextension install --sys-prefix --symlink --overwrite --py unofficial_voila_gridstack
 
 # enable the extension
-jupyter nbextension enable --sys-prefix --py voila_gridstack
+jupyter nbextension enable --sys-prefix --py unofficial_voila_gridstack
 
 # check the extension is installed and enabled
 jupyter nbextension list
@@ -125,11 +125,11 @@ jupyter nbextension list
 jupyter notebook
 ```
 
-Then edit the files in `voila-gridstack/static` and reload the page to see the changes.
+Then edit the files in `unofficial-voila-gridstack/static` and reload the page to see the changes.
 
 ### JupyterLab Extension
 
-![voila-gridstack](assets/jupyterlab-gridstack.gif)
+![unofficial-voila-gridstack](assets/jupyterlab-gridstack.gif)
 
 Note: You will need NodeJS to build the extension package.
 
@@ -139,7 +139,7 @@ The `jlpm` command is JupyterLab's pinned version of
 
 ```bash
 # activate the environment
-conda activate voila-gridstack
+conda activate unofficial-voila-gridstack
 
 # install JupyterLab
 mamba install -c conda-forge jupyterlab

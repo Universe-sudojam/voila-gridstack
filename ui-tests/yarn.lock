@@ -4216,9 +4216,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"voila-gridstack-ui-tests@workspace:.":
+"unofficial-voila-gridstack-ui-tests@workspace:.":
   version: 0.0.0-use.local
-  resolution: "voila-gridstack-ui-tests@workspace:."
+  resolution: "unofficial-voila-gridstack-ui-tests@workspace:."
   dependencies:
     "@jupyterlab/galata": ^5.1.0
     copyfiles: ^2.4.1

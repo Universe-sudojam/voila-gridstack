@@ -1,13 +1,13 @@
 <!--
-voila-gridstack documentation master file, created by
+unofficial-voila-gridstack documentation master file, created by
 sphinx-quickstart on Sat Sep 17 20:01:04 2022.
 You can adapt this file completely to your liking, but it should at least
 contain the root `toctree` directive.
 -->
 
-# Welcome to voila-gridstack's documentation!
+# Welcome to unofficial-voila-gridstack's documentation!
 
-Voila-Gridstack is a gridstack-based template for [![voila-gridstack](_static/voila.png)](https://github.com/voila-dashboards/voila).
+unofficial-voila-gridstack is a gridstack-based template for [![unofficial-voila-gridstack](_static/voila.png)](https://github.com/voila-dashboards/voila).
 
 <table>
 <thead align="center" cellspacing="10">
@@ -25,12 +25,12 @@ Voila-Gridstack is a gridstack-based template for [![voila-gridstack](_static/vo
       </a>
     </td>
     <td align="center">
-      <a href="https://mybinder.org/v2/gh/voila-dashboards/voila-gridstack/stable?urlpath=voila/tree/examples/scotch_dashboard.ipynb">
+      <a href="https://mybinder.org/v2/gh/voila-dashboards/unofficial-voila-gridstack/stable?urlpath=voila/tree/examples/scotch_dashboard.ipynb">
         <img src="https://mybinder.org/badge_logo.svg" alt="Voila GridStack on Binder"/>
       </a>
     </td>
     <td align="center">
-      <a href="https://mybinder.org/v2/gh/voila-dashboards/voila-gridstack/stable?urlpath=lab/tree/examples">
+      <a href="https://mybinder.org/v2/gh/voila-dashboards/unofficial-voila-gridstack/stable?urlpath=lab/tree/examples">
         <img src="https://mybinder.org/badge_logo.svg" alt="JupyterLab on Binder"/>
       </a>
     </td>

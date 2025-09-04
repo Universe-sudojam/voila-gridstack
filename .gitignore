@@ -4,7 +4,7 @@ node_modules/
 *.egg-info/
 .ipynb_checkpoints
 *.tsbuildinfo
-voila_gridstack/labextension
+unofficial_voila_gridstack/labextension
 
 # Created by https://www.gitignore.io/api/python
 # Edit at https://www.gitignore.io/?templates=python
@@ -106,6 +106,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# venv
+.venv/
 
 # OS X stuff
 *.DS_Store

@@ -8,7 +8,7 @@ include ts*.json
 include yarn.lock
 include *.log
 
-graft voila_gridstack
+graft unofficial_voila_gridstack
 
 # Javascript files
 graft src
