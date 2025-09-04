@@ -91,13 +91,14 @@ export const editor: JupyterFrontEndPlugin<IVoilaGridStackTracker> = {
     const isEnabled = () => {
       const widget = tracker.currentWidget;
 
-      if (!widget) {
-        return false;
+      if (widget?.isVisible && widget === app.shell.currentWidget) {
+        return true;
       }
-      return true;
+      return false;
     };
 
     commands.addCommand(CommandIDs.redo, {
+      label: 'Redo',
       execute: () => {
         const widget = tracker.currentWidget;
         if (!widget) {
@@ -105,10 +106,10 @@ export const editor: JupyterFrontEndPlugin<IVoilaGridStackTracker> = {
         }
         widget.redo();
       },
-      isEnabled,
     });
 
     commands.addCommand(CommandIDs.undo, {
+      label: 'Undo',
       execute: () => {
         const widget = tracker.currentWidget;
         if (!widget) {
@@ -116,16 +117,17 @@ export const editor: JupyterFrontEndPlugin<IVoilaGridStackTracker> = {
         }
         widget.undo();
       },
-      isEnabled,
     });
 
     // Add undo/redo hooks to the edit menu.
     mainMenu.editMenu.undoers.undo.add({
       id: CommandIDs.undo,
+      isEnabled,
     });
     // Add undo/redo hooks to the edit menu.
     mainMenu.editMenu.undoers.redo.add({
       id: CommandIDs.redo,
+      isEnabled,
     });
 
     app.docRegistry.addWidgetFactory(factory);
